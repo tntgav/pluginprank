@@ -30,9 +30,7 @@ namespace pluginprank
                 }
             }
             Log.Info("building map now");
-            Building exported550448 = new Building(rooms["EZ_Intercom"].transform.position, rooms["EZ_Intercom"].transform.rotation.eulerAngles - new Vector3(0, 270, 0), Vector3.one, "EXPORTED550448");
-            exported550448.Add(new Structure(new Vector3(0.15625f, 0.9599609f, -3.164063f), new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), PrimitiveType.Cube, new Color(1f, 1f, 1f, 1f), "exported550448"));
-            exported550448.SpawnBuilding();
+
             Log.Info("completed building map");
         }
     }
