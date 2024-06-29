@@ -37,8 +37,13 @@ namespace pluginprank.CustomClasses
         {
             Vector3 newpos = basepos + position;
             Vector3 newscale = new Vector3(scale.x * scalemult.x, scale.y * scalemult.y, scale.z * scalemult.z);
-            Vector3 newrotation = rotation + rotationmod;
-            prim = Handlers.SpawnPrim(newpos, newscale, newrotation, color, primitiveType, collision);
+            
+            prim = Handlers.SpawnPrim(newpos, newscale, rotation, color, primitiveType, collision);
+            Vector3 dir = prim.transform.position - basepos;
+            Quaternion rot = Quaternion.Euler(rotationmod);
+            dir = rot * dir;
+            prim.transform.position = basepos + dir;
+            prim.transform.rotation = rot * prim.transform.rotation;
         }
 
         public void Despawn()
@@ -86,16 +91,6 @@ namespace pluginprank.CustomClasses
         public Vector3 rotation;
         public Vector3 scale;
         public string name;
-
-        public Building(List<Structure> structures, Vector3 position, Vector3 rotation, Vector3 scale, string name)
-        {
-            this.structures = structures;
-            this.position = position;
-            this.rotation = rotation;
-            this.scale = scale;
-            this.name = name;
-            this.lights = new List<Light>();
-        }
 
         public Building(Vector3 position, Vector3 rotation, Vector3 scale, string name)
         {

@@ -94,8 +94,8 @@ namespace pluginprank
                         Vector3 roomangle = roomOffset.transform.rotation.eulerAngles;
                         //roomangle is CORRECT
                         int digits = Handlers.RangeInt(100, 999);
-
-                        built += ($"\nBuilding exported{prim.netId}{digits} = new Building(rooms[\"{roomOffset.name}\"].transform.position, rooms[\"{roomOffset.name}\"].transform.rotation.eulerAngles + new Vector3({roomangle.x}, {roomangle.y}, {roomangle.z}), Vector3.one, \"EXPORTED{prim.netId}{digits}\");");
+                        //NORMAL ANGLE - CURRENT ANGLE
+                        built += ($"\nBuilding exported{prim.netId}{digits} = new Building(rooms[\"{roomOffset.name}\"].transform.position, rooms[\"{roomOffset.name}\"].transform.rotation.eulerAngles - new Vector3({roomangle.x}, {roomangle.y}, {roomangle.z}), Vector3.one, \"EXPORTED{prim.netId}{digits}\");");
                         built += ($"\nexported{prim.netId}{digits}.Add(new Structure(new Vector3({offset.x}f, {offset.y}f, {offset.z}f), new Vector3({prim.transform.localScale.x}f, {prim.transform.localScale.y}f, {prim.transform.localScale.z}f), new Vector3({prim.transform.localRotation.x}f, {prim.transform.localRotation.y}f, {prim.transform.localRotation.z}f), PrimitiveType.{prim.PrimitiveType}, new Color({prim.MaterialColor.r}f, {prim.MaterialColor.g}f, {prim.MaterialColor.b}f, {prim.MaterialColor.a}f), \"exported{prim.netId}{digits}\"));");
                         built += ($"\nexported{prim.netId}{digits}.SpawnBuilding();");
                     }
