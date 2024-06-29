@@ -1,0 +1,21 @@
+﻿public enum Ability
+{
+    Spawn_OneCharge,
+    Spawn_TwoCharge,
+    Spawn_ThreeCharge,
+    Passive_Decay,
+    Passive_Invigorated,
+    Passive_NoFog,
+    Passive_Trappable,
+    Passive_Glowing,
+    Passive_Speed,
+    Passive_Lock,
+    Passive_Healing,
+    Active_Build,
+    Active_Speed,
+    Active_Effects,
+    Active_Jam,
+    Active_Invis,
+    Active_Traps,
+    Active_Hack,
+}
