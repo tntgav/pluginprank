@@ -54,9 +54,6 @@ namespace pluginprank
             Building exported597445 = new Building(rooms["Outside"].transform.position, Vector3.zero, Vector3.one, "EXPORTED597445");
             exported597445.Add(new Structure(new Vector3(0.04296875f, 3.191711f, 0.7539062f), new Vector3(2f, 2f, 2f), new Vector3(0f, 0f, 0f), PrimitiveType.Sphere, new Color(0f, 0f, 0f, 0f), "exported597445"));
             exported597445.SpawnBuilding();
-            Building exported598720 = new Building(rooms["Outside"].transform.position, Vector3.zero, Vector3.one, "EXPORTED598720");
-            exported598720.Add(new Structure(new Vector3(-4.445313f, 1.457275f, -29.78125f), new Vector3(0.5f, 3f, 2.5f), new Vector3(0f, 0f, 0f), PrimitiveType.Cube, new Color(1f, 1f, 1f, 1f), "exported598720"));
-            exported598720.SpawnBuilding();
             Log.Info("completed building map");
         }
     }
